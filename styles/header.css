@@ -9,15 +9,16 @@ body, html {
 header {
     margin: 0;
     padding: 5px;
-    background-color: #000b;
+    background: linear-gradient(#000, #000c);
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 99;
+    font-size: 1.1vw;
 }
 
 header > .spacer {
@@ -31,9 +32,9 @@ header > * {
 }
 
 header > h1 {
-    font-size: 3em;
     font-weight: bold;
     letter-spacing: .1em;
+    font-size: 3em;
 }
 
 header > a {
@@ -49,7 +50,7 @@ header + .pseudo {
 
 header + .pseudo > h1 {
     color: #102;
-    font-size: 3em;
+    font-size: 3.3vw;
     font-weight: bold;
     margin: 0;
 }

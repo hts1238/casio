@@ -1,3 +1,7 @@
+main {
+    font-size: 1.2vw;
+}
+
 main > .first {
     position: relative;
     margin: 0;
@@ -42,4 +46,53 @@ main > .first .shadow {
     width: 100%;
     height: 100%;
     background: linear-gradient(transparent 70%, #102a 80%, #102 90%);
+}
+
+main > .second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6vh 4vw;
+}
+
+main > .second > p {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3.3vw;
+}
+
+main > .second > .series {
+    display: flex;
+    font-size: 2.2em;
+    width: 75%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+main > .second > .series img {
+    width: 16vw;
+    height: 20vw;
+    /*border: 2px solid #204;*/
+    box-shadow: 0 0 10px 10px #80f5;
+    border-radius: 2vw;
+    object-fit: contain;
+}
+
+main > .second > .series p {
+    font-size: .65em;
+    font-weight: 600;
+}
+
+main > .second > .series > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > .second > a {
+    font-size: 1.7em;
+}
+
+main .link-arrow::after {
+    content: " >";
 }
