@@ -53,6 +53,7 @@ main > .second {
     flex-direction: column;
     align-items: center;
     padding: 6vh 4vw;
+    background-color: #fff;
 }
 
 main > .second > p {
@@ -72,8 +73,7 @@ main > .second > .series {
 main > .second > .series img {
     width: 16vw;
     height: 20vw;
-    /*border: 2px solid #204;*/
-    box-shadow: 0 0 10px 10px #80f5;
+    background-color: #fff;
     border-radius: 2vw;
     object-fit: contain;
 }
@@ -95,4 +95,54 @@ main > .second > a {
 
 main .link-arrow::after {
     content: " >";
+}
+
+main > .third {
+    background-color: #103;
+    color: #fff;
+    font-size: 2.8vw;
+    padding: 30px 20px 0;
+    font-weight: bold;
+}
+
+main > .third > div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+main > .third img {
+    width: 32vw;
+}
+
+main > .third p {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+main img.left-shadow svg {
+    box-shadow: -10px 5px 30px 0 #70f;
+}
+
+main > .forth {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    font-size: 2vw;
+}
+
+main > .forth > div {
+    width: 50%;
+    text-align: center;
+    margin: 5vw 0;
+    padding: 0 8vw 1vw;
+    letter-spacing: .1em;
+}
+
+main > .forth h2 {
+    font-weight: 800;
 }
