@@ -1,5 +1,22 @@
 <?php
 
+/*====== PASSWORD CHECK ======*/
+
+const PASS = "uUYNawBjI7bSzQFcQpromkiUE";
+
+if (!isset($_COOKIE['pass'])) {
+    header("Location: login.php");
+    exit(0);
+}
+
+if ($_COOKIE['pass'] != PASS) {
+    setcookie('pass', '', time() - 1);
+    header("Location: login.php");
+    exit(0);
+}
+
+/*====== END OF PASSWORD CHECK ======*/
+
 include_once("../functions/connect.php");
 $db = connect();
 
@@ -35,6 +52,10 @@ while ($collection != "pop") {
     else {
         if ($isNew == 1) {
             $sql = "INSERT INTO `casio-goods`(`name`, `collection`, `price`) VALUES ('$name', '$collection', '$price')";
+            $sql_result = mysqli_query($db, $sql);
+        }
+        else {
+            $sql = "UPDATE `casio-goods` SET `price`='$price' WHERE `name`='$name'";
             $sql_result = mysqli_query($db, $sql);
         }
     }
