@@ -1,5 +1,7 @@
 <?php
 
+include_once("templates/header.html");
+
 $name = $_GET["n"];
 
 $content = file_get_contents("http://www.oldtimeworld.host.ru/apps/minicat/showmini.asp?n=$name");
@@ -43,3 +45,5 @@ foreach (array_slice($arr, 6) as $line) {
     echo "<li>", $line, "</li>";
 }
 echo "</ul>";
+
+include_once("templates/footer.html");

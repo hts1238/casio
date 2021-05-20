@@ -14,14 +14,16 @@ $request = $_GET["s"];
 include_once("functions/search.php");
 $result = search($request);
 
+include_once("templates/header.html");
 
-echo "<div style='display:flex;flex-wrap: wrap;'>";
+echo "<link rel='stylesheet' href='collections/styles/collection.css'>";
+echo "<div class='collection-cont'>";
     foreach ($result as $item) {
         $name = $item[0];
         $price = $item[1];
         $collection = $item[2];
         echo "
-            <div style='padding:20px;display:flex;flex-direction:column;align-items:center;'>
+            <div class='collection-block'>
                 <h1 style='margin:5px;'>$name</h1>
                 <h3 style='margin:5px;'>$collection</h3>
                 <a href='collections/view.php?n=$name' target='_blank'><img src='functions/getimg.php?name=$name' loading='lazy'></a>
@@ -29,3 +31,5 @@ echo "<div style='display:flex;flex-wrap: wrap;'>";
             </div>";
     }
 echo "</div>";
+
+include_once("templates/footer.html");

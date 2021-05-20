@@ -8,7 +8,7 @@ if (!isset($_GET['s'])) {
 else {
     $collection = $_GET['s'];
     $sort = isset($_GET['sort']) ? $_GET['sort'] : false;
-    echo "Collection is <b>$collection</b>.<br><a href='.'>Go back</a><hr>";
+    echo "<link rel='stylesheet' href='styles/collection.css'>";
 
     include_once("../functions/connect.php");
     $db = connect();
@@ -17,14 +17,20 @@ else {
     $sql_result = mysqli_query($db, $sql);
     $sql_result = mysqli_fetch_all($sql_result);
 
-    //echo print_r($sql_result), "<hr>";
+    echo "
+        <form action='../search.php' method='get'>
+            <input type='text' name='s' placeholder='Search'>
+            <input type='submit'>
+        </form>";
+        
     echo "Сортировка: 
         <a href='./?s=$collection&sort=ap'>По возрастанию цены</a>
         <a href='./?s=$collection&sort=dp'>По убыванию цены</a>
         <a href='./?s=$collection&sort=al'>По алфавиту</a>
         <a href='./?s=$collection'>Сначала новые</a>
         ";
-    echo "<div style='display:flex;flex-wrap: wrap;'>";
+
+    echo "<div class='collection-cont'>";
     if (!$sort) {
         $sql_result = array_reverse($sql_result);
         for ($i = 0; $i < count($sql_result); $i++) {
@@ -39,21 +45,15 @@ else {
         }
         if ($sort == 'ap') {
             asort($arr);
-            foreach ($arr as $name => $price) {
-                include("templates/collection.html");
-            }
         }
         if ($sort == 'dp') {
             arsort($arr);
-            foreach ($arr as $name => $price) {
-                include("templates/collection.html");
-            }
         }
         if ($sort == 'al') {
             ksort($arr);
-            foreach ($arr as $name => $price) {
-                include("templates/collection.html");
-            }
+        }
+        foreach ($arr as $name => $price) {
+            include("templates/collection.html");
         }
     }
     echo "</div>";

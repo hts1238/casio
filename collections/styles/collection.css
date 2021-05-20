@@ -1,0 +1,11 @@
+.collection-block {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.collection-cont {
+	display: flex;
+	flex-wrap: wrap;
+}

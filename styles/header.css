@@ -50,14 +50,23 @@ header > a {
 }
 
 header + .pseudo {
+    color: transparent;
     margin: 0;
     padding: 5px;
     background-color: #102;
+    font-size: 1.1vw;
 }
 
 header + .pseudo > h1 {
-    color: #102;
-    font-size: 3.3vw;
+    font-weight: normal;
+    letter-spacing: .1em;
+    font-size: 2.7em;
+    margin: 0;
+}
+
+header + .pseudo > h1 > a {
+    color: transparent;
+    font-size: 1.2em;
     font-weight: bold;
     margin: 0;
 }
