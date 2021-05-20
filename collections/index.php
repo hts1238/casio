@@ -1,5 +1,7 @@
 <?php
 
+include_once("templates/header.html");
+
 if (!isset($_GET['s'])) {
     include_once("templates/index.html");
 }
@@ -56,3 +58,5 @@ else {
     }
     echo "</div>";
 }
+
+include_once("templates/footer.html");

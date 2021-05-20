@@ -8,7 +8,7 @@ if (!isset($_COOKIE['pass'])) {
 }
 
 if ($_COOKIE['pass'] != PASS) {
-    setcookie('pass', '', time() - 1);
+    setcookie('pass', '', time() - 1, '/');
     header("Location: login.php");
     exit(0);
 }

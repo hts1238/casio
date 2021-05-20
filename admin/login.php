@@ -1,5 +1,7 @@
 <?php
 
+const PASS = "uUYNawBjI7bSzQFcQpromkiUE";
+
 if (!isset($_POST["pass"])) {
     include_once("header.html");
 
@@ -9,6 +11,8 @@ if (!isset($_POST["pass"])) {
     exit(0);
 }
 
-setcookie('pass', $_POST["pass"], time() + 3000000, '/');
+if ($_POST["pass"] == PASS) {
+	setcookie('pass', $_POST["pass"], time() + 3000000, '/');
+}
 
 header("Location: ./");

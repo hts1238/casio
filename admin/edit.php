@@ -1,5 +1,22 @@
 <?php
 
+/*====== PASSWORD CHECK ======*/
+
+const PASS = "uUYNawBjI7bSzQFcQpromkiUE";
+
+if (!isset($_COOKIE['pass'])) {
+    header("Location: login.php");
+    exit(0);
+}
+
+if ($_COOKIE['pass'] != PASS) {
+    setcookie('pass', '', time() - 1);
+    header("Location: login.php");
+    exit(0);
+}
+
+/*====== END OF PASSWORD CHECK ======*/
+
 $name = $_GET['n'];
 include_once("../functions/connect.php");
 $db = connect();
