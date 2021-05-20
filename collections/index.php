@@ -22,6 +22,15 @@ else {
             <input type='text' name='s' placeholder='Search'>
             <input type='submit'>
         </form>";
+
+    if ($collection == 'clocks') {
+        echo "<h1>Будильники и настольные часы</h1>";
+    }
+    else {
+        include_once("../functions/getname.php");
+        $collectionName = getCollectionName($collection);
+        echo "<h1>Часы серии <b>$collectionName</b></h1>";
+    }
         
     echo "Сортировка: 
         <a href='./?s=$collection&sort=ap'>По возрастанию цены</a>
